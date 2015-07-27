@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
 
 
+  get 'lists/index'
+
+  get 'lists/new'
+
+  get 'lists/edit'
+
+  get 'lists/show'
+
+  get 'lists/update'
+
+  get 'lists/create'
+
+  get 'lists/destroy'
+
   root 'home#index'
 
 
