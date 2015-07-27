@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
 
 
+  get 'items/index'
+
+  get 'items/new'
+
+  get 'items/show'
+
+  get 'items/create'
+
+  get 'items/update'
+
+  get 'items/destroy'
+
+  get 'items/edit'
+
   get 'lists/index'
 
   get 'lists/new'
