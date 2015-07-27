@@ -18,14 +18,14 @@
   @import 'bootstrap';
   @import 'bootstrap-sprockets';
 
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,900italic,400italic);
+/*@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,900italic,400italic);
 
 
 $playfair-display-sc: 'Playfair Display SC', serif; 
   
 
 
- 
+ */
 
 
 .page-header {
@@ -36,7 +36,8 @@ $playfair-display-sc: 'Playfair Display SC', serif;
   font-style: italic;
   display: inline-block;
   margin-top: 0;
-  font-family: $playfair-display-sc;
+  font-family:  'Playfair Display SC', serif;
+  font-weight: bolder;
 
   
     
@@ -59,7 +60,10 @@ body {
 h1 {
     margin: 40px 0 0 60px;
     font-size: 3.5em;
-    font-family: $playfair-display-sc;
+    font-family:  'Playfair Display SC', serif;
+    font-weight: bolder;
+     letter-spacing: 2px;
+
     }
 
 h2 {
