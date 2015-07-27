@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+  @import 'bootstrap';
+  @import 'bootstrap-sprockets';
+
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,900italic,400italic);
+
+
+$playfair-display-sc: 'Playfair Display SC', serif; 
+  
+
+
+ 
+
+
+.page-header {
+  background: rgb(163, 227, 219);
+  height:200px;
+  width: 100%;
+  color: #ffffff;
+  font-style: italic;
+  display: inline-block;
+  margin-top: 0;
+  font-family: $playfair-display-sc;
+
+  
+    
+}
+
+.logo {
+  float:right;
+  top: 0;
+  margin-right: 100px;
+}
+
+.left {
+  float:left;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+    margin: 40px 0 0 60px;
+    font-size: 3.5em;
+    font-family: $playfair-display-sc;
+    }
+
+h2 {
+  margin: -20px 0 0 60px;
+  font-size: 2em;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+
+}
+
+small { 
+    font-size: smaller;
+}
+

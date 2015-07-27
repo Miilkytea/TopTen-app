@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TopTenApp</title>
+   <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,900italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,900italic,400italic' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="left">
+  <h1>My Top Ten</h1><br><h2>A place for your lists of favorites</smaller></h2>
+    
+  </div>
+  <span class="logo"><a href="/"><img src="http://i.imgur.com/lYcfLlf.png" height= "200px" title="My Top Ten" /></a></span>
+</div>
+
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
