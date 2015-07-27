@@ -1,33 +1,8 @@
 Rails.application.routes.draw do
 
-
-  get 'items/index'
-
-  get 'items/new'
-
-  get 'items/show'
-
-  get 'items/create'
-
-  get 'items/update'
-
-  get 'items/destroy'
-
-  get 'items/edit'
-
-  get 'lists/index'
-
-  get 'lists/new'
-
-  get 'lists/edit'
-
-  get 'lists/show'
-
-  get 'lists/update'
-
-  get 'lists/create'
-
-  get 'lists/destroy'
+resources :lists do
+  resources :items
+end
 
   root 'home#index'
 
@@ -35,6 +10,7 @@ Rails.application.routes.draw do
 
  resources :users
 
+ get "/login", to: "sessions#new"
  resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.

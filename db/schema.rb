@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150727101534) do
     t.string   "name"
     t.string   "image_url"
     t.string   "description"
+    t.integer  "list_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -27,8 +28,9 @@ ActiveRecord::Schema.define(version: 20150727101534) do
   create_table "lists", force: :cascade do |t|
     t.string   "title"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

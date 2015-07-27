@@ -1,22 +1,33 @@
 class ItemsController < ApplicationController
-  def index
-  end
-
+  before_action :authenticate 
+  before_action :authorize  
   def new
-  end
-
-  def show
+    @item = Item.new
   end
 
   def create
-  end
-
-  def update
+    item = Item.new(item_params)
+    @list.items << item
+    if list.save
+      redirect_to lists_index_path(@list), notice: "A thingy added to your list!"
+    else render 'new'
+    end  
   end
 
   def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+      redirect_to lists_index_path(@list), notice: "You removed a thing from your list!"
+    else
+      flash.now.alert = "Error"
+      redirect_to lists_index_path(@list)  
+    end 
+    
   end
+end
 
-  def edit
-  end
+private 
+
+def item_params
+  params.require(:item).permit(:name, :image_url, :description)
 end

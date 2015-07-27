@@ -3,6 +3,7 @@ class CreateLists < ActiveRecord::Migration
     create_table :lists do |t|
       t.string :title
       t.string :image_url
+      t.string :description
 
       t.timestamps null: false
     end
