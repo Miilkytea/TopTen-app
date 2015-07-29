@@ -1,2 +1,28 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+
+<%= image_tag(@list.image_url, class: "list-img") %>
+<h1> <%= @list.title %> </h1>
+<% if @list.items.length %>
+  <% @list.items.each do |i| %>
+  <% end %>
+<% else %>
+  <h3> You have no items in your list!</h3>
+<% end %>  
+
+<%= form_for [current_user, @list, @item] do |i| %>
+  <div class="field">
+    <%= i.label :image_url, "Image URL" %>
+    <%= i.text_field :image_url %>
+  </div>  
+  <div class="field">
+    <%= i.label :name, "Name" %>
+    <%= i.text_field :name %>
+  </div>
+  <div class="field">
+    <%= i.label :description, "Description" %>
+    <%= i.text_field :description %>
+  </div>
+
+  <div class "actions">
+    <%= i.submit "Add" %>
+  </div>
+<% end %>  

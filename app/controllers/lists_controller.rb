@@ -1,14 +1,12 @@
 class ListsController < ApplicationController
-
-
-
+  # before_action :authenticate, only: [:edit, :update]
+  
   def index
     @lists = List.all
   end
 
   def new
     @list = List.new
-  
   end
 
   def edit
@@ -17,34 +15,41 @@ class ListsController < ApplicationController
 
   def show 
     @list = List.find(params[:id])
+    @item = Item.new
   end
 
   def update
     @list = List.find(params[:id])
     if @lists.update_attributes(list_params)
-    redirect_to lists_index_path
+      redirect_to current_user
     else 
-    render 'edit'
+      render 'edit'
     end
   end
 
   def create
-    @list = List.find(params(list_params))
+    @list = List.new(list_params)
     if @list.save 
-      redirect_to lists_index_path
+      current_user.lists << @list
+      redirect_to user_list_path(@list, current_user), notice: "List added!"
     else 
      render 'new'
     end 
   end
 
   def destroy
-    @list = List.find(params[:id]).destroy
-    redirect_to lists_index_path
+    @list = List.find(params[:id])
+    if list.destroy
+       redirect_to current_user, notice: "List removed!"
+    else 
+      flash.now.alert = "Error attempting to delete list."
+      redirect_to current_user
+    end
   end
-end
 
 private
 
-def list_params
-  params.require(:list).permit(:title, :topic, :image_url, :description)
+  def list_params
+    params.require(:list).permit(:title, :topic, :image_url, :description)
+  end
 end

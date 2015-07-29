@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-resources :lists do
-  resources :items
-end
+root 'home#index' 
 
-  root 'home#index'
-
-
-
- resources :users
+ resources :users do
+    resources :lists do
+      resources :items
+      end
+    end 
 
  get "/login", to: "sessions#new"
  

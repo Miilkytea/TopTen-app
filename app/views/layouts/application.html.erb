@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>TopTenApp</title>
-   <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,900italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,900italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,900italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,900italic,400italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,24 +11,19 @@
 <body>
 
   <div class="page-wrap">
-  
-
-      
-  
-
-
-    <%= render "shared/header" %>  
-
-      <% flash.each do |email, message| %>
-        <div class="flash-message flash-message-<%= email %>">
-          <%= message %>
-        </div>
-      <% end %>
+    <%= render "shared/header" %>
+    
+    <% flash.each do |email, message| %>
+      <div class="flash-message flash-message-<%= email %>">
+        <%= message %>
+      </div>
+    <% end %>
 
     <%= yield %>
 
     <div class="fix"></div>  
-  <%= render "shared/footer" %> 
-
+    <%= render "shared/footer" %> 
+  </div>
+  
 </body>
 </html>

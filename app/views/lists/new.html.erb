@@ -1,22 +1,29 @@
-  <h1>New List</h1>
-  <%= form_for [@list] do |f| %>
+<h1>New List</h1>
+
+<%= form_for [current_user, @list] do |f| %>
   <div class="field">
     <%= f.label :title, "Title" %>
     <%= f.text_field :title, value: @list.title %>
   </div>
+  
   <div class="field">
     <%= f.label :image_url, "Image URL" %>
     <%= f.text_field :image_url %>
   </div> 
+
   <span class="field" id="drop" >
     <%= f.select :topic, ["Random","Film", "Books", "Movies"], {label: "Pick a Topic"} %>
-   </span> 
-    <span id="yourTextBox" input type="text"><%= f.text_field :topic %></span>
-    
+  </span> 
+  
+  <span id="yourTextBox" input type="text">
+    <%= f.text_field :topic %>
+  </span>
+
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :list, value: @list.description %>
+    <%= f.text_area :description, size:"60x12", value: @list.description %>
   </div> 
+  
   <div class="actions">
     <%= f.submit "Add" %>
   </div>

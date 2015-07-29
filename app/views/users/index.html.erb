@@ -1,1 +1,37 @@
+<div class="box">
+  <h1>My Lists</h1>
 
+  <%= link_to "Make a New List", new_user_list_path(current_user), class: "btn btn-primary btn-lg active", role: "button" %>
+  <br>
+  <br>
+  
+  <% @lists.each do |list| %>
+    <table>
+      <tbody>
+        <tr class="list-view">
+          <td>
+            <%= link_to user_list_path(current_user, list) do %>
+              <%= image_tag(list.image_url, class: "list-img") %>
+            <% end %>  
+          </td>
+          <td>"<%= list.title %>"</td>
+          <td>Topic: <%= list.topic %></td>
+          <td>Description: <%= list.description %></td>
+          <td>
+            <!-- <form class="edit" id="edit-list" action="/users/lists/<%= list.id %>/edit">
+              <input type="submit" value="Edit">
+            </form> -->
+          </td>
+          <td>
+            <!-- <form class="delete" id="delete-list" method="POST" action="/lists/<%= list.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Delete List">
+            </form> -->
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+    <br>
+   <% end %>
+
+ </div>
