@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+
+
+
   def index
     @lists = List.all
   end
@@ -43,5 +46,5 @@ end
 private
 
 def list_params
-  params.require(:list).permit(:title, :image_url, :description)
+  params.require(:list).permit(:title, :topic, :image_url, :description)
 end

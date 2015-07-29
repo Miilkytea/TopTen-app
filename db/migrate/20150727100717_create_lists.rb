@@ -4,6 +4,7 @@ class CreateLists < ActiveRecord::Migration
       t.string :title
       t.string :image_url
       t.string :description
+      t.string :topic
 
       t.timestamps null: false
     end

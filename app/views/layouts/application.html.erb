@@ -10,20 +10,25 @@
 </head>
 <body>
 
+  <div class="page-wrap">
+  
+
+      
+  
 
 
+    <%= render "shared/header" %>  
 
-<%= render "shared/header" %>  
+      <% flash.each do |email, message| %>
+        <div class="flash-message flash-message-<%= email %>">
+          <%= message %>
+        </div>
+      <% end %>
 
-  <% flash.each do |name, message| %>
-    <div class="flash-message flash-message-<%= name %>">
-      <%= message %>
-    </div>
-  <% end %>
+    <%= yield %>
 
-<%= yield %>
-
-<%= render "shared/footer" %> 
+    <div class="fix"></div>  
+  <%= render "shared/footer" %> 
 
 </body>
 </html>

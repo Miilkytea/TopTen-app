@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate 
-  before_action :authorize  
+  
   def new
     @item = Item.new
   end

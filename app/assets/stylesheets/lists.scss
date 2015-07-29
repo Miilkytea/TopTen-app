@@ -2,11 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+.box {
+  margin-left: 100px;
+  position: relative;
+
+
+
+}
+
+
+
 .new-list-btn {
-  height: 100px;
+  height:150px;
   width:200px;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   background-color: pink;
-   
+  border-radius: 10px;
+  margin-left: 60px;
+  position: absolute;
+  font-style: italic;
+}
+
+.btn-large.outline,  .new-list-btn h2 {
+  text-align: center;
+  position: absolute;
+  font-family: "Helvetica-Neue", sans-serif;
+  font-style: italic;
+}
+
+.list-view td {
+  padding: 0 10px;
+}
+
+img.list-img {
+  max-height: 60%;
+}
+
+.top-row {
+  font-weight: bold;
+}
+div.heading {
+  margin-bottom: 20px;
 }

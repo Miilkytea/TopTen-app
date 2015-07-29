@@ -1,17 +1,42 @@
-<h1>My Lists</h1>
-
-<div class="new-list-btn">
-
-<h2>Make a new list</h2>
-<a href="ists/new"></a>
-
-</div>
 
 
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, lists_index_path(list) %></li>
-  <% end %>
-</ul>
 
+
+
+
+<div class="box">
+
+
+
+
+          <h1>My Lists</h1>
+
+         <a href="/lists/new" class="btn btn-primary btn-lg active" role="button">Make a New List</a><br><br>
+
+
+
+ <% @lists.each do |list| %>
+      <table>
+        <tbody>
+          <tr class="list-view">
+            <td><img class="list-img" src="<%= list.image_url %>"</td>
+            <td>"<%= list.title %>"</td>
+            <td>Topic: <%= list.topic %></td>
+            <td>Description: <%= list.description %></td>
+            <td> <form class="edit" id="edit-list" action="/lists/<%= list.id %>/edit">
+              <input type="submit" value="Edit"></form></td>
+            <td>  <form class="delete" id="delete-list" method="POST" action="/lists/<%= list.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+
+              <input type="submit" value="Delete List">
+
+            </form></td>
+           
+          </tr>
+        </tbody>
+      </table>
+      <br>
+ <% end %>
+
+ </div>

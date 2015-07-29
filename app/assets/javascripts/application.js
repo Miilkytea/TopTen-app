@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('#yourTextBox, input[type="text"]').change(function () {
+  if ($('#drop').val() == "Random") {
+    $('#yourTextBox').show();
+  } else {
+    $('#yourTextBox').hide();
+  }
+});
