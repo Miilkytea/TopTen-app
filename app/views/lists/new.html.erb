@@ -11,13 +11,10 @@
     <%= f.text_field :image_url %>
   </div> 
 
-  <span class="field" id="drop" >
-    <%= f.select :topic, ["Random","Film", "Books", "Movies"], {label: "Pick a Topic"} %>
-  </span> 
-  
-  <span id="yourTextBox" input type="text">
+  <div clas="field>"
+    <%= f.label :topic, "Topic" %>
     <%= f.text_field :topic %>
-  </span>
+  </div>
 
   <div class="field">
     <%= f.label :description %>

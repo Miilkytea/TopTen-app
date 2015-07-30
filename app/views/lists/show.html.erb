@@ -1,12 +1,27 @@
-
+<%= link_to 'Back to your Lists', user_lists_path, class: 'btn btn-primary btn-lg' %>
+<br>
+<br>
 <%= image_tag(@list.image_url, class: "list-img") %>
 <h1> <%= @list.title %> </h1>
-<% if @list.items.length %>
-  <% @list.items.each do |i| %>
-  <% end %>
+
+<%= @list.items.length %>
+
+<% if @list.items.length >= 1 %>
+  <% @list.items.each do |item| %>
+    <table>
+      <tr>
+        <td> <img src="<%= item.image_url %>" </td>
+        <td> <%= item.name %> </td>
+        <td> <%= item.description %> </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  <% end %>    
 <% else %>
   <h3> You have no items in your list!</h3>
 <% end %>  
+
 
 <%= form_for [current_user, @list, @item] do |i| %>
   <div class="field">
@@ -25,4 +40,6 @@
   <div class "actions">
     <%= i.submit "Add" %>
   </div>
-<% end %>  
+<% end %> 
+
+show the items on the page 

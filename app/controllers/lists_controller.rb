@@ -1,8 +1,9 @@
 class ListsController < ApplicationController
   # before_action :authenticate, only: [:edit, :update]
   
+  # This is good
   def index
-    @lists = List.all
+    @lists = User.find(params[:user_id]).lists;
   end
 
   def new
@@ -28,10 +29,10 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @user = User.find(params[:user_id])
+    @list = @user.lists.build(list_params)
     if @list.save 
-      current_user.lists << @list
-      redirect_to user_list_path(@list, current_user), notice: "List added!"
+      redirect_to user_list_path(@user, @list), notice: "List added!"
     else 
      render 'new'
     end 
@@ -50,6 +51,6 @@ class ListsController < ApplicationController
 private
 
   def list_params
-    params.require(:list).permit(:title, :topic, :image_url, :description)
+    params.require(:list).permit(:user_id, :title, :topic, :image_url, :description)
   end
 end

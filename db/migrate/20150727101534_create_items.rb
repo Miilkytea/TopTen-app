@@ -4,9 +4,8 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.string :image_url
       t.string :description
-      t.integer :list_id
 
-      t.belongs_to :list, :user, index: true, foreign_key: true 
+      t.references :list, :user, index: true, foreign_key: true 
 
       t.timestamps null: false
     end

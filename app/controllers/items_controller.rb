@@ -9,10 +9,11 @@ class ItemsController < ApplicationController
   end
     
   def create
-    @item = Item.new(item_params)
-    @list = List.find(params[:user_id])
+    @user = User.find(params[:user_id])
+    @list = List.find(params[:list_id])
+    @item = @list.items.build(item_params)
     if @item.save
-      redirect_to user_list_path(current_user, @list), notice: "A thingy added to your list!"
+      redirect_to user_list_path(@user, @list), notice: "A thingy added to your list!"
     else render 'new'
     end  
   end
@@ -32,5 +33,5 @@ end
 private 
 
 def item_params
-  params.require(:item).permit(:name, :image_url, :description)
+  params.require(:item).permit(:list_id, :name, :image_url, :description)
 end

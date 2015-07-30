@@ -9,9 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <div class="page-wrap">
+    
     <%= render "shared/header" %>
+    
+    <div class="logout">
+    <%= link_to 'Log Out', sessions_path, class: 'btn btn-primary' %>
+    </div> 
     
     <% flash.each do |email, message| %>
       <div class="flash-message flash-message-<%= email %>">
