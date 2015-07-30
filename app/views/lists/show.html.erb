@@ -3,9 +3,6 @@
 <br>
 <%= image_tag(@list.image_url, class: "list-img") %>
 <h1> <%= @list.title %> </h1>
-
-<%= @list.items.length %>
-
 <% if @list.items.length >= 1 %>
   <% @list.items.each do |item| %>
     <table>
@@ -13,7 +10,7 @@
         <td> <img src="<%= item.image_url %>" </td>
         <td> <%= item.name %> </td>
         <td> <%= item.description %> </td>
-        <td></td>
+        <td><%= link_to "Delete", user_list_item_path(current_user, @list, item), class: "btn active", role: "button", method: :delete %></td>
         <td></td>
       </tr>
     </table>
@@ -42,4 +39,5 @@
   </div>
 <% end %> 
 
-show the items on the page 
+
+

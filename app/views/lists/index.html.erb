@@ -20,10 +20,10 @@
           <td>Topic: <%= list.topic %></td>
           <td>Description: <%= list.description %></td>
           <td>
-           <%= link_to "Edit", edit_user_list_path(list, current_user), class: "btn active", role: "button" %>
+           <%= link_to "Edit", edit_user_list_path(current_user, list), class: "btn active", role: "button" %>
           </td>
           <td>
-            <%= link_to "Delete", user_lists_path(list, current_user), class: "btn active", role: "button", method: :delete %>
+            <%= link_to "Delete", user_list_path(current_user, list), class: "btn active", role: "button", method: :delete %>
           </td> 
         </tr>
       </tbody>

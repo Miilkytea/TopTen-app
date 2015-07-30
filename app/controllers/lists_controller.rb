@@ -20,9 +20,10 @@ class ListsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @list = List.find(params[:id])
-    if @lists.update_attributes(list_params)
-      redirect_to current_user
+    if @list.update_attributes(list_params)
+      redirect_to user_lists_path(@user, @list)
     else 
       render 'edit'
     end
@@ -39,12 +40,13 @@ class ListsController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:user_id])
     @list = List.find(params[:id])
-    if list.destroy
-       redirect_to current_user, notice: "List removed!"
+    if @list.destroy
+       redirect_to user_lists_path, notice: "List removed!"
     else 
       flash.now.alert = "Error attempting to delete list."
-      redirect_to current_user
+      redirect_to user_lists_path
     end
   end
 
