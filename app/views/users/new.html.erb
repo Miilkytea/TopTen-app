@@ -1,8 +1,8 @@
 <h1>Sign Up</h1>
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {class: "form-horizontal" } do |f| %>
 <% if @user.errors.any? %>
-  <div class="error_messages">
-    <h2>Form is invalid</h2>
+  <div class="error_messages col-md-6 control-label">
+    <h3>Form is invalid</h3>
     <ul>
       <% for message in @user.errors.full_messages %>
         <li><%= message %></li>
@@ -10,17 +10,21 @@
     </ul>
   </div>
 <% end %>
-<div class="field">
-  <%= f.label :email %>
+<div class="form-group">
+  <%= f.label :email, class: "col-md-6 control-label" %>
   <%= f.text_field :email %>
 </div>
-<div class="field">
-  <%= f.label :password %>
+<div class="form-group">
+  <%= f.label :password, class: "col-md-6 control-label" %>
   <%= f.password_field :password %>
 </div>
-<div class="field">
-  <%= f.label :password_confirmation %>
+<div class="form-group">
+  <%= f.label :password_confirmation, class: "col-md-6 control-label" %>
   <%= f.password_field :password_confirmation %>
 </div>
-<div class="actions"><%= f.submit %></div>
+  <div class="form-group">
+    <div class="col-md-7 control-label">
+     <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+    </div>
+  </div>
 <% end %>

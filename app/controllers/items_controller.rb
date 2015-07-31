@@ -23,10 +23,10 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
     if @item.destroy
-      redirect_to user_list_path(@list), notice: "You removed a thing from your list!"
+      redirect_to user_list_path(@user, @list), notice: "You removed a thing from your list!"
     else
       flash.now.alert = "Error"
-      redirect_to user_list_path(@list) 
+      redirect_to user_list_path(@user, @list) 
     end 
     
   end

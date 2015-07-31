@@ -1,14 +1,14 @@
 <div class="box">
   <h1>My Lists</h1>
 
-  <%= link_to "Make a New List", new_user_list_path(current_user, @list), class: "btn btn-primary btn-lg active", role: "button" %>
+  <%= link_to "Make a New List", new_user_list_path(current_user, @list), class: "btn btn-primary btn-lg", role: "button" %>
   <br>
   <br>
   
   <% @lists.each do |list| %>
     <table>
       <tbody>
-        <tr class="list-view">
+        <tr class="list-view show">
           <td>
             <%= link_to user_list_path(current_user, list) do %>
               <%= image_tag(list.image_url, class: "list-img") %>

@@ -1,43 +1,50 @@
-<%= link_to 'Back to your Lists', user_lists_path, class: 'btn btn-primary btn-lg' %>
-<br>
-<br>
-<%= image_tag(@list.image_url, class: "list-img") %>
-<h1> <%= @list.title %> </h1>
-<% if @list.items.length >= 1 %>
-  <% @list.items.each do |item| %>
-    <table>
-      <tr>
-        <td> <img src="<%= item.image_url %>" </td>
-        <td> <%= item.name %> </td>
-        <td> <%= item.description %> </td>
-        <td><%= link_to "Delete", user_list_item_path(current_user, @list, item), class: "btn active", role: "button", method: :delete %></td>
-        <td></td>
-      </tr>
-    </table>
-  <% end %>    
-<% else %>
-  <h3> You have no items in your list!</h3>
-<% end %>  
+<div class="container">
+  <div class="row row-centered">
+    <div class="col-centered"></div>
+      <%= link_to 'Back to your Lists', user_lists_path, class: 'btn btn-primary btn-lg' %>
+      <br>
+      <br>
+      <%= image_tag(@list.image_url, class: "list-img col-centered") %>
+      <h1> <%= @list.title %> </h1>
+      <% if @list.items.length >= 1 %>
+        <% @list.items.each do |item| %>
+          <table>
+            <tr class="show">
+              <td> <img src="<%= item.image_url %>" </td>
+              <td> <%= item.name %> </td>
+              <td> <%= item.description %> </td>
+              <td><%= link_to "Delete", user_list_item_path(current_user, @list, item), class: "btn active", role: "button", method: :delete %></td>
+              <td></td>
+            </tr>
+          </table>
+        <% end %>    
+      <% else %>
+        <h3 class= "col-centered"> You have no items in your list!</h3>
+      <% end %> 
+    </div>
+  </div> 
+  <div>
+  <%= form_for [current_user, @list, @item], html: {class: "form-horizontal" } do |i| %>
+    <div class="form-group">
+      <%= i.label :image_url, "Image URL", class: "col-md-6 control-label"  %>
+      <%= i.text_field :image_url, placeholder: "200px max" %>
+    </div>  
+    <div class="form-group">
+      <%= i.label :name, "Name", class: "col-md-6 control-label"  %>
+      <%= i.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= i.label :description, "Description", class: "col-md-6 control-label"  %>
+      <%= i.text_field :description %>
+    </div>
 
-
-<%= form_for [current_user, @list, @item] do |i| %>
-  <div class="field">
-    <%= i.label :image_url, "Image URL" %>
-    <%= i.text_field :image_url %>
-  </div>  
-  <div class="field">
-    <%= i.label :name, "Name" %>
-    <%= i.text_field :name %>
-  </div>
-  <div class="field">
-    <%= i.label :description, "Description" %>
-    <%= i.text_field :description %>
-  </div>
-
-  <div class "actions">
-    <%= i.submit "Add" %>
-  </div>
-<% end %> 
-
-
+     <div class="form-group">
+      <div class="col-md-7 control-label">
+       <%= i.submit "Submit", class: "btn btn-default btn-primary" %>
+      </div>
+     <div> 
+  <% end %>
+</div> 
+     
+</div>
 

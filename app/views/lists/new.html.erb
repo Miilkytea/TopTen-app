@@ -1,28 +1,30 @@
-<h1>New List</h1>
+<h1> New List </h1>
 
-<%= form_for [current_user, @list] do |f| %>
-  <div class="field">
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title, value: @list.title %>
+<%= form_for [current_user, @list], html: {class: "form-horizontal" } do |f| %>
+   <div class="form-group">
+    <%= f.label :title, class: "col-md-5 control-label"  %>
+    <%= f.text_field :title %>
   </div>
   
-  <div class="field">
-    <%= f.label :image_url, "Image URL" %>
-    <%= f.text_field :image_url %>
+   <div class="form-group">
+    <%= f.label :image_url, class: "col-md-5 control-label"  %>
+    <%= f.text_field :image_url, placeholder: '200px max' %> 
   </div> 
 
-  <div clas="field>"
-    <%= f.label :topic, "Topic" %>
+   <div class="form-group">
+    <%= f.label :topic, class: "col-md-5 control-label"  %>
     <%= f.text_field :topic %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
+   <div class="form-group">
+    <%= f.label :description, class: "col-md-5 control-label"  %>
     <%= f.text_area :description, size:"60x12", value: @list.description %>
   </div> 
   
-  <div class="actions">
-    <%= f.submit "Add" %>
+  <div class="form-group">
+    <div class="col-md-6 control-label">
+     <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+    </div>
   </div>
 <% end %>
-
+<div>

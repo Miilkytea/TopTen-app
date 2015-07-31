@@ -14,7 +14,7 @@
     <%= render "shared/header" %>
     
     <div class="logout">
-      <%= link_to 'Log Out', session_path(:user_id), class: 'btn btn-primary', method: :delete %>
+      <%= link_to 'Log Out', session_path(:user_id), class: 'first btn', method: :delete %>
     </div> 
     
     <% flash.each do |email, message| %>
