@@ -2,6 +2,12 @@
 
 Top Ten App is a place where users can make endless lists of their top ten favorite things. Books, movies, music, foods, cars, you name it. You can share your favorite lists with friends. You can even make a  top ten list of your favorite Top Ten lists.
 
+##MVP
+Users login and make personlized lists. They can share lists on social media. They can add items to these lists with images descriptions. 
+
+##Icebox
+Implement a different design for the site, an API, and more user personalization for their profiles.
+
 ###Technologies 
 
 This app was created with HTML, CSS and Ruby using a Rails framework. Hosted by Heroku and version control by Git. It was typed on a Macintosh Computer.
