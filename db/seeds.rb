@@ -8,3 +8,4 @@
 
 
 
+User.create(email:'user@user.com', password:'test', password_confirmation:'test')
