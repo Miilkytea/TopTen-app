@@ -49,10 +49,10 @@ $playfair-display-sc: 'Playfair Display SC', serif;
 }
 
 .logo {
-  float:right;
+  float: right;
   top: 0;
   margin-right: 100px;
-  max-height: 60%;
+  max-height: 45%;
   width: auto;
 }
 
@@ -172,7 +172,7 @@ a:hover {
 
 @media only screen and (max-width: 680px){
     .page-header {
-      height:150px;
+      height: 150px;
       width: 100%;
       color: #ffffff;
       font-style: italic;
@@ -183,7 +183,7 @@ a:hover {
     }
 
     .logo {
-      float:right;
+      float: right;
       top: 0;
       min-height: 60%;
       width: auto;
@@ -195,10 +195,13 @@ a:hover {
     }
     .page-header h2 {
       margin: -20px 0 0 60px;
-      font-size: 1em;
       font-family: 'Playfair Display', serif;
       letter-spacing: 2px;
 
-}
+    }
+
+    body {
+      font-size: 1em;
+    }
 
 }
