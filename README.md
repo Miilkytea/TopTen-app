@@ -11,4 +11,3 @@ This app was created with HTML, CSS and Ruby using a Rails framework. Hosted by 
 The site is not quite responsive and still needs a bunch more styling and polishing. A new user can sign in but the site only registers the current user, not by ID's. The app needs authentication for its password protected content and the ability to share lists with friends and family through social media. 
 
 I would like to add JQuery to the app to make it even more fun and interactive, and stylized. Also as the title of the app states, the lists need to be limited to ten items per list. 
-
