@@ -3,9 +3,9 @@ class ListsController < ApplicationController
   
   # This is good
   def index
-    @user = current_user
+    # @user = current_user
     @lists = current_user.lists
-    # User.find(params[:id])
+    User.find(params[:user_id])
   end
 
   def new
